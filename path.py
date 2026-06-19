@@ -21,3 +21,12 @@ def get_customer_risk(customer_id : int):
         "risk_level": profile["risk"],
         "score": profile["score"],
     }
+    
+@app.get("/model/{model_name}/customer/{customer_id}")
+def get_model_prediction(model_name: str, customer_id: int):
+    return {
+        "model" : model_name,
+        "customer_id": customer_id,
+        "prediction":"high risk"
+        
+    }
