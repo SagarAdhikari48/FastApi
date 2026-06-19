@@ -1,0 +1,6 @@
+10M users
+limit: int = 10
+limit: int , no default
+
+
+-> Pydantic is the python library  which defines the shape of data the comes through incomming request. entire validation occurs. reads the json and compare with the validation
