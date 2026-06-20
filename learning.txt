@@ -11,3 +11,33 @@ Error Handling - there is 3 layers
 l1 Pydantic - > if wrong data type or missing value it automaticaly shows error
 l2 Http exception -> server side exception error 
 l3 Try except ->unexpected crash which we had never expected the server will not crash the server will run smooth .
+
+
+## Real project - Begineer project for ML Engineers:
+- Business
+- Ml Engineer -
+- 100s agents - house selling deals with client 
+- problem - speed, human inconsistency- two expert in same house wirh different price as 300k and 400k which trust loose .3rd problem is scale 2000 queries and 10 valuation.
+
+
+Solution to these problem - 
+we have more than 20k historical data and real houses we will train model including features > price
+1- train. model
+2. wrap api
+3. 24*7 available - app should be available so client can check even at midnight
+
+
+Technical solution:
+1. explore.py underrstand more than 20k record - understand data feature 
+2.train.py - building - intelligence buld- averages prices of house
+3.house-model.joblib - Trained model is saved here - so we neednot to retrain
+4.  delivery mechanism - 
+
+
+
+Requirement: 
+- python - OOPs
+- Scikit-learn - ML
+- fast-api
+- Active mindset
+
