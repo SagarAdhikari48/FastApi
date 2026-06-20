@@ -33,8 +33,6 @@ Technical solution:
 3.house-model.joblib - Trained model is saved here - so we neednot to retrain
 4.  delivery mechanism - 
 
-
-
 Requirement: 
 - python - OOPs
 - Scikit-learn - ML
