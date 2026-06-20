@@ -44,7 +44,7 @@ def submit_marks(submission: MarksSubmission):
     # Error 2 valid range 0-100
     if submission.marks < 0 or submission.marks > 100:
         raise HTTPException(
-            status_code = 400,
+            status_code=400,
             detail={
                 "error": "Marks nust be between 0 and 100",
                 "marks_received": submission.marks,
@@ -52,13 +52,17 @@ def submit_marks(submission: MarksSubmission):
             },
         )
     if submission.subject.strip() == "":
-        raise HTTPException(status_code = 400, detail="Subject cannot be empty")
+        raise HTTPException(status_code=400, detail="Subject cannot be empty")
 
-    students[submission.student_id]["marks"] = submission.marks
-
-    return {
-        "message": "Marks submitted successfully",
-        "student": students[submission.student_id]["name"],
-        "subject": submission.subject,
-        "marks": submission.marks,
-    }
+    try:
+        students[submission.student_id]["marks"] = submission.marks
+        return {
+            "message": "Marks submitted successfully",
+            "student": students[submission.student_id]["name"],
+            "subject": submission.subject,
+            "marks": submission.marks,
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Something went wrong from our side: {str(e)} "
+        )
