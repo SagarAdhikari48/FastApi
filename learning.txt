@@ -4,3 +4,10 @@ limit: int , no default
 
 
 -> Pydantic is the python library  which defines the shape of data the comes through incomming request. entire validation occurs. reads the json and compare with the validation
+
+
+
+Error Handling - there is 3 layers
+l1 Pydantic - > if wrong data type or missing value it automaticaly shows error
+l2 Http exception -> server side exception error 
+l3 Try except ->unexpected crash which we had never expected the server will not crash the server will run smooth .
